@@ -41,3 +41,17 @@ void display(List_ptr list)
     p_walk = p_walk->next;
   }
 }
+
+Status add_to_start(List_ptr list, int value)
+{
+  Node_ptr new_node = create_node(value);
+  if (list->head == NULL)
+   {
+     list->head = new_node;
+   } else {
+     new_node->next = list->head;
+     list->head = new_node;
+   }
+    list->count++;
+    return Success;
+}
