@@ -95,3 +95,15 @@ Status add_unique(List_ptr list, int value)
   }
   return add_to_end(list, value);
 }
+
+Status remove_from_start(List_ptr list)
+{
+  if(list->head == NULL)
+  {
+    return Failure;
+  }
+  Node_ptr new_first_node = list->head->next;
+  free(list->head);
+  list->head = new_first_node;
+  return Success;
+}
