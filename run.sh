@@ -1,6 +1,4 @@
- #! /bin/zsh
-
-rm -rf *.o
+#! /bin/zsh
 
 if [[ ! -d bin ]]; then
   mkdir bin;
