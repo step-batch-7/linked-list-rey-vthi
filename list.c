@@ -48,6 +48,7 @@ Status add_to_start(List_ptr list, int value)
   if (list->head == NULL)
    {
      list->head = new_node;
+     list->last = new_node;
    } else {
      new_node->next = list->head;
      list->head = new_node;
