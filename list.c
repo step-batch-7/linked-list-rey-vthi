@@ -103,6 +103,7 @@ Status remove_from_start(List_ptr list)
     return Failure;
   }
   Node_ptr new_first_node = list->head->next;
+  free(list->head);
   list->head = new_first_node;
   return Success;
 }
@@ -120,6 +121,7 @@ Status remove_from_end(List_ptr list)
     p_walk = p_walk->next;
     current_node++;
   }
+  free(p_walk->next);
   p_walk->next = NULL;
   list->count--;
   return Success;
