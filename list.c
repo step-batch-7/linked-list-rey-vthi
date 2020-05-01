@@ -204,3 +204,16 @@ void destroy_list(List_ptr list)
    }
    free(list);
  }
+
+Status clear_list(List_ptr list)
+{
+  Node_ptr p_walk = list->head;
+   while(p_walk != NULL){
+     Node_ptr next = p_walk->next;
+     free(p_walk);
+     p_walk = next;
+   }
+   list->head = NULL;
+   list->last = NULL;
+   return Success;
+}
