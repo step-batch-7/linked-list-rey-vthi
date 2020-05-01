@@ -46,6 +46,6 @@ void destroy_list(List_ptr); // Frees the elements and the list structure from m
 
 Node_ptr create_node(int value);
 
-int find_number_in_list(List *list, int value);
+Status does_exist(List_ptr list, int value);
 
 #endif

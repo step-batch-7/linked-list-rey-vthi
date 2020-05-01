@@ -50,6 +50,11 @@ int main(void)
       scanf("%d", &number);
       status = remove_first_occurrence(list, number);
       break;
+    case 'i':
+      printf("Enter a number to remove all occurrences in the list\n");
+      scanf(" %d", &number);
+      remove_all_occurrences(list, number);
+      break;
     case 'l':
       printf("Elements of list are: \n");
       display(list);
