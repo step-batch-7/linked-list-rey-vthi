@@ -36,6 +36,10 @@ int main(void)
       printf("removing a number from the begining\n");
       status = remove_from_start(list);
       break;
+    case 'f':
+      printf("removing a number from the end\n");
+      status = remove_from_end(list);
+      break;
     case 'l':
       printf("Elements of list are: \n");
       display(list);

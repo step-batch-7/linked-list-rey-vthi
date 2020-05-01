@@ -110,20 +110,25 @@ Status remove_from_start(List_ptr list)
 }
 
 Status remove_from_end(List_ptr list)
-{
+{ 
+  Status status = Failure;
   if(list->head == NULL)
   {
     return Failure;
   }
+  Node_ptr last_node = NULL;
   Node_ptr p_walk = list->head;
-  int current_node = 1;
-  while (current_node < list->count-1)
+  while (p_walk->next != NULL)
   {
+    last_node = p_walk;
     p_walk = p_walk->next;
-    current_node++;
   }
-  free(p_walk->next);
-  p_walk->next = NULL;
+  free(p_walk);
+  list->last= last_node;
+  if(last_node != NULL)
+    last_node->next = NULL;
+  else
+    list->head = last_node;
   list->count--;
   return Success;
 }
