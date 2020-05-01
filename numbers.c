@@ -32,6 +32,10 @@ int main(void)
       scanf("%d", &number);
       status = add_unique(list, number);
       break;
+    case 'e':
+      printf("removing a number from the begining\n");
+      status = remove_from_start(list);
+      break;
     case 'l':
       printf("Elements of list are: \n");
       display(list);
