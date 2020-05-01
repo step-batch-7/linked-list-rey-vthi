@@ -53,7 +53,22 @@ int main(void)
     case 'i':
       printf("Enter a number to remove all occurrences in the list\n");
       scanf(" %d", &number);
-      remove_all_occurrences(list, number);
+      status = remove_all_occurrences(list, number);
+      break;
+    case 'j':
+      printf("clearing the whole list");
+      status = clear_list(list);
+      break;
+    case 'k':
+      printf("Enter a number to check if a number exists in the list\n");
+      scanf("%d", &number);
+      status = does_exist(list, number);
+      if(status == Failure){
+        printf("Number does not exist in the list\n");
+      } else
+      {
+        printf("Number exist in the list\n");
+      }
       break;
     case 'l':
       printf("Elements of list are: \n");
