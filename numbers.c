@@ -40,6 +40,11 @@ int main(void)
       printf("removing a number from the end\n");
       status = remove_from_end(list);
       break;
+    case 'g':
+      printf("Enter a position to remove a number from the list\n");
+      scanf("%d", &position);
+      status = remove_at(list, position);
+      break;
     case 'l':
       printf("Elements of list are: \n");
       display(list);
