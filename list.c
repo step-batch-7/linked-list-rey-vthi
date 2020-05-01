@@ -69,15 +69,15 @@ Status insert_at(List_ptr list, int value, int position)
     return add_to_start(list, value);
   }
   Node_ptr p_walk = list->head;
-  Node_ptr last_node = list->head;
+  Node_ptr previous_node = list->head;
   int counter = 0;
   while (counter != position)
   {
-    last_node = p_walk;
+    previous_node = p_walk;
     p_walk = p_walk->next;
     counter++;
   }
-  last_node->next = new_node;
+  previous_node->next = new_node;
   new_node->next = p_walk;
   list->count++;
   return Success;
@@ -88,12 +88,13 @@ Status add_unique(List_ptr list, int value)
   Node_ptr p_walk = list->head;
   while (p_walk != NULL)
   {
-    if(p_walk->value == value){
+    if (p_walk->value == value)
+    {
       return Failure;
     }
     p_walk = p_walk->next;
   }
-  return add_to_end(list, value);
+    return add_to_end(list, value);
 }
 
 Status remove_from_start(List_ptr list)
