@@ -45,6 +45,11 @@ int main(void)
       scanf("%d", &position);
       status = remove_at(list, position);
       break;
+    case 'h':
+      printf("Enter a number to remove the first occurrence in the list\n");
+      scanf("%d", &number);
+      status = remove_first_occurrence(list, number);
+      break;
     case 'l':
       printf("Elements of list are: \n");
       display(list);
