@@ -4,7 +4,7 @@
 int main(void)
 {
   char option;
-  int number,status;
+  int number,status,position;
   List_ptr list = create_list();
   while (option!='m')
   {
@@ -21,6 +21,11 @@ int main(void)
       printf("Enter a number to add at the start in the list\n");
       scanf("%d", &number);
       status = add_to_start(list, number);
+      break;
+    case 'c':
+      printf("Enter a number and position to insert at a given position in the list\n");
+      scanf("%d %d", &number, &position);
+      status = insert_at(list, number, position);
       break;
     case 'l':
       printf("Elements of list are: \n");
