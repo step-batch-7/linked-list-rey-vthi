@@ -193,3 +193,14 @@ Status remove_all_occurrences(List_ptr list, int value)
   }
   return Success;
 }
+
+void destroy_list(List_ptr list)
+ {
+   Node_ptr p_walk = list->head;
+   while(p_walk != NULL){
+     Node_ptr next = p_walk->next;
+     free(p_walk);
+     p_walk = next;
+   }
+   free(list);
+ }
