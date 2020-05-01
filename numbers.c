@@ -27,6 +27,11 @@ int main(void)
       scanf("%d %d", &number, &position);
       status = insert_at(list, number, position);
       break;
+    case 'd':
+      printf("Enter a unique number to add into list\n");
+      scanf("%d", &number);
+      status = add_unique(list, number);
+      break;
     case 'l':
       printf("Elements of list are: \n");
       display(list);
