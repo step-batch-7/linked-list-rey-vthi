@@ -152,18 +152,8 @@ Status remove_at(List_ptr list, int position)
 
 Status remove_first_occurrence(List_ptr list, int value)
 {
-  if(list->head == NULL)
-  {
-    return Failure;
-  }
-  Node_ptr p_walk = list->head;
-  int position = 0;
-  while (p_walk->value != value && p_walk != NULL)
-  {
-    p_walk = p_walk->next;
-    position++;
-  }
-  if(p_walk == NULL)
+  int position = find_number_in_list(list,value);
+  if (position < 0)
   {
     return Failure;
   }
@@ -172,24 +162,15 @@ Status remove_first_occurrence(List_ptr list, int value)
 
 Status remove_all_occurrences(List_ptr list, int value)
 {
-  if(list->head == NULL)
+  int position = find_number_in_list(list,value);
+  if (position < 0)
   {
     return Failure;
   }
-  Node_ptr p_walk = list->head;
-  int position = 0;
-  while (p_walk != NULL)
+  while (position != -1)
   {
-    if(p_walk->value == value)
-    {
-      p_walk = p_walk->next;
-      remove_at(list, position);
-    }
-    else
-    {
-      p_walk = p_walk->next;
-      position++;
-    }
+    remove_at(list, position);
+    position = find_number_in_list(list,value);
   }
   return Success;
 }
@@ -216,4 +197,20 @@ Status clear_list(List_ptr list)
    list->head = NULL;
    list->last = NULL;
    return Success;
+}
+
+int find_number_in_list(List *list, int value)
+{
+  Node *p_walk = list->head;
+  int position = -1;
+  for (int i = 0; i < list->count; i++)
+  {
+    if (p_walk->value == value)
+    {
+      position = i;
+      break;
+    }
+    p_walk = p_walk->next;
+  }
+    return position;
 }
