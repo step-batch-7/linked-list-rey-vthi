@@ -48,4 +48,6 @@ Node_ptr create_node(int value);
 
 Status does_exist(List_ptr list, int value);
 
+void show_operation_status(int status);
+
 #endif

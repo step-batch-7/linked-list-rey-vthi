@@ -16,48 +16,59 @@ int main(void)
       printf("Enter a number to add at the end in the list\n");
       scanf("%d", &number);
       status = add_to_end(list, number);
+      show_operation_status(status);
       break;
     case 'b':
       printf("Enter a number to add at the start in the list\n");
       scanf("%d", &number);
       status = add_to_start(list, number);
+      show_operation_status(status);
+
       break;
     case 'c':
       printf("Enter a number and position to insert at a given position in the list\n");
       scanf("%d %d", &number, &position);
       status = insert_at(list, number, position);
+      show_operation_status(status);
       break;
     case 'd':
       printf("Enter a unique number to add into list\n");
       scanf("%d", &number);
       status = add_unique(list, number);
+      show_operation_status(status);
       break;
     case 'e':
       printf("removing a number from the begining\n");
       status = remove_from_start(list);
+      show_operation_status(status);
       break;
     case 'f':
       printf("removing a number from the end\n");
       status = remove_from_end(list);
+      show_operation_status(status);
       break;
     case 'g':
       printf("Enter a position to remove a number from the list\n");
       scanf("%d", &position);
       status = remove_at(list, position);
+      show_operation_status(status);
       break;
     case 'h':
       printf("Enter a number to remove the first occurrence in the list\n");
       scanf("%d", &number);
       status = remove_first_occurrence(list, number);
+      show_operation_status(status);
       break;
     case 'i':
       printf("Enter a number to remove all occurrences in the list\n");
       scanf(" %d", &number);
       status = remove_all_occurrences(list, number);
+      show_operation_status(status);
       break;
     case 'j':
       printf("clearing the whole list");
       status = clear_list(list);
+      show_operation_status(status);
       break;
     case 'k':
       printf("Enter a number to check if a number exists in the list\n");

@@ -225,3 +225,14 @@ Status does_exist(List_ptr list, int value)
   }
   return Failure;
 }
+
+void show_operation_status(int status)
+{
+  if(status == Failure)
+  {
+    printf("Failed to perform operation\n");
+  } else
+  {
+    printf("Operation performed successfully\n");
+  }
+}
