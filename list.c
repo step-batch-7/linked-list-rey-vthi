@@ -68,6 +68,7 @@ Status insert_at(List_ptr list, int value, int position)
   {
     return add_to_start(list, value);
   }
+  Prev_Current_Pair nodes;
   Node_ptr p_walk = list->head;
   Node_ptr previous_node = list->head;
   int counter = 0;
@@ -106,6 +107,7 @@ Status remove_from_start(List_ptr list)
   Node_ptr new_first_node = list->head->next;
   free(list->head);
   list->head = new_first_node;
+  list->count--;
   return Success;
 }
 
