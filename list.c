@@ -68,7 +68,6 @@ Status insert_at(List_ptr list, int value, int position)
   {
     return add_to_start(list, value);
   }
-  Prev_Current_Pair nodes;
   Node_ptr p_walk = list->head;
   Node_ptr previous_node = list->head;
   int counter = 0;
